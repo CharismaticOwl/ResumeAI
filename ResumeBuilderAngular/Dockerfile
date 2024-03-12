@@ -1,4 +1,4 @@
-FROM node:alpine as BUILDIMAGE
+FROM node:alpine
 
 WORKDIR /app
 
@@ -8,7 +8,7 @@ RUN npm install --force
 
 RUN npm i -g ng @angular/cli
 
-RUN ng build
+RUN npm run build
 
 EXPOSE 4200
 
