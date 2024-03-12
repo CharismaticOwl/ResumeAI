@@ -12,3 +12,10 @@ services:
       - "4200:4200"
     depends_on:
       - backend
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
