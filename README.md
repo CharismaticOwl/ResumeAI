@@ -124,3 +124,18 @@ nohup - means no hang up, the process with not terminate when the terminal is ex
 
 4. using docker-compose up command to build the images and deploy.
 
+# Create ECR  public repos to push the images to ECR and docker hub
+
+```
+public.ecr.aws/w4c5t7g4/resumeai-backend
+public.ecr.aws/w4c5t7g4/resumeai-frontend
+public.ecr.aws/w4c5t7g4/resumeai-nginx
+```
+
+```
+docker.io/narsss1234/resumeai-frontend
+docker.io/narsss1234/resumeai-backend
+docker.io/narsss1234/resumeai-nginx
+```
+
+# 
