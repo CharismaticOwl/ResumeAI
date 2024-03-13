@@ -20,3 +20,4 @@ spec:
           ports:
             - containerPort: 4292
               name: backend-port
+          imagePullPolicy: Always
