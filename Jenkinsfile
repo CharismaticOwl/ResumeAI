@@ -11,7 +11,7 @@ pipeline{
 
         stage('Test Frontend'){
             steps{
-                sh 'cd ResumeBuilderAngular && sudo npm i -g ng && sudo npm test'
+                sh 'cd ResumeBuilderAngular && npm i -g ng && npm test'
             }
         }
     }
