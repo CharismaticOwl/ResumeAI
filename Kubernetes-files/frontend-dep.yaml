@@ -21,3 +21,7 @@ spec:
             - containerPort: 4200
               name: frontend-port
           imagePullPolicy: Always
+      initContainers:
+        - name: init-mydb
+          image: busybox
+          command: ['sh', '-c', 'until nslookup backend.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for backend; sleep 2; done;']
