@@ -9,6 +9,10 @@ pipeline{
             }
         }
 
-        stage('')
+        stage('Test Frontend'){
+            steps{
+                sh 'cd ResumeBuilderAngular && npm test'
+            }
+        }
     }
 }
