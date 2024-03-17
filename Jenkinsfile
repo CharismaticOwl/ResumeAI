@@ -15,9 +15,28 @@ pipeline{
             }
         }
 
-        stage('let\'s build the docker file'){
+        stage('let\'s build the frontend docker file'){
             steps{
-                sh 'pwd && ls'
+                sh 'cd ResumeBuilderAngular && docker build -t narsss1234/resumeai-frontend:latest .'
+            }
+        }
+
+        stage('install Backend dependencies'){
+            steps{
+                sh 'cd ResumeBuilderBackend && npm install --force && sudo npm i -g typescript ng'
+            }
+        }
+
+        stage('let\'s build the backend docker file'){
+            steps{
+                sh 'cd ResumeBuilderBackend && docker build -t narsss1234/resumeai-backend:latest .'
+            }
+        }
+
+        stage('Push the images'){
+            steps{
+                sh 'docker push narsss1234/resumeai-frontend:latest'
+                sh 'docker push narsss1234/resumeai-backend:latest'
             }
         }
     }
