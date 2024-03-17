@@ -2,7 +2,9 @@ FROM node:alpine
 
 WORKDIR /app
 
-COPY . /app
+RUN apt install git -y 
+
+RUN cd /app && git clone -b master https://github.com/SaiGovardhana/ResumeBuilderAngular.git
 
 RUN npm install --force
 

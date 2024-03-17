@@ -39,5 +39,7 @@ pipeline{
                 sh 'docker push narsss1234/resumeai-backend:latest'
             }
         }
+
+        stage('')
     }
 }
