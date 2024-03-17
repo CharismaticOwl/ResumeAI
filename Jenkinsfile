@@ -42,7 +42,13 @@ pipeline{
 
         stage('update kube config'){
             steps{
-                sh 'echo workINprogress'
+                sh 'aws eks update-kubeconfig --region ap-south-1 --name resumeai-new'
+            }
+        }
+
+        stage('let\'s apply the kube files or use helm - either way'){
+            steps{
+                sh 'cd kubernetes-files && kubectl apply -f .'
             }
         }
     }

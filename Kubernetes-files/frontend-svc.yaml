@@ -9,5 +9,5 @@ spec:
     - protocol: TCP
       port: 4200
       targetPort: frontend-port
-  type: ClusterIP
+  type: NodePort
     
