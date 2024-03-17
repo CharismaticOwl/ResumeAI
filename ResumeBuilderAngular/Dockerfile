@@ -2,7 +2,8 @@ FROM node:alpine
 
 WORKDIR /app
 
-RUN apk add git -y 
+RUN apk update && \
+    apk add --no-cache git openssh
 
 RUN cd /app && git clone -b master https://github.com/SaiGovardhana/ResumeBuilderBackend.git
 
