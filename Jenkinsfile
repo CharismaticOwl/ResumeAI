@@ -11,7 +11,13 @@ pipeline{
 
         stage('Test Frontend'){
             steps{
-                sh 'cd ResumeBuilderAngular && sudo npm i -g ng @angular/cli @angular-devkit/build-angular @angular/compiler-cli typescript --save-prod && sudo npm test'
+                sh 'cd ResumeBuilderAngular && npm install --force && sudo npm i -g ng @angular/cli && sudo npm test'
+            }
+        }
+
+        stage('let\'s build the docker file'){
+            steps{
+                sh 'echo workINprogress'
             }
         }
     }
