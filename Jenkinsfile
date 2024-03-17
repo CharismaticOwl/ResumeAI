@@ -40,6 +40,10 @@ pipeline{
             }
         }
 
-        stage('')
+        stage('update kube config'){
+            steps{
+                sh 'echo workINprogress'
+            }
+        }
     }
 }
