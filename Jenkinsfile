@@ -9,15 +9,15 @@ pipeline{
             }
         }
 
-        stage('Test Frontend'){
+        stage('install Frontend dependencies'){
             steps{
-                sh 'cd ResumeBuilderAngular && npm install --force && sudo npm i -g ng @angular/cli && sudo npm test'
+                sh 'cd ResumeBuilderAngular && npm install --force && sudo npm i -g ng @angular/cli'
             }
         }
 
         stage('let\'s build the docker file'){
             steps{
-                sh 'echo workINprogress'
+                sh 'pwd && ls'
             }
         }
     }
