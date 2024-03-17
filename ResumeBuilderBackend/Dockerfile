@@ -2,10 +2,7 @@ FROM node:alpine
 
 WORKDIR /app
 
-RUN apk update && \
-    apk add --no-cache git openssh
-
-RUN cd /app && git clone -b master https://github.com/SaiGovardhana/ResumeBuilderAngular.git
+COPY . .
 
 RUN npm install --force
 
