@@ -2,7 +2,7 @@ FROM node:alpine
 
 WORKDIR /app
 
-RUN apt install git -y 
+RUN yum install git -y 
 
 RUN cd /app && git clone -b master https://github.com/SaiGovardhana/ResumeBuilderBackend.git
 
